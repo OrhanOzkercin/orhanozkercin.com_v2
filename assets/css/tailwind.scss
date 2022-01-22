@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwind variants;
+
+@layer components {
+  .dark {
+    @apply bg-slate-900 text-slate-400;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-slate-400;
+    }
+
+  }
+}

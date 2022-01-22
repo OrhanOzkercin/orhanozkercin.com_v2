@@ -1,8 +1,9 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   darkMode: 'class',
   mode: 'jit',
-  purge: [
-    './assets/**/*.{css}',
+  content: [
     './components/*.{vue,js}',
     './components/**/*.{vue,js}',
     './pages/*.vue',
@@ -12,10 +13,8 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
-    color: {
-      extends: {
-        primary: '#fe3',
-      },
+    fontFamily: {
+      logo: ['Mea Culpa', 'cursive'],
     },
   },
   plugins: [],
