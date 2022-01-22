@@ -1,3 +1,10 @@
 {
-  "extends": ["plugin:nuxt/recommended"]
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:nuxt/base",
+    "plugin:nuxt/recommended"
+  ]
 }
