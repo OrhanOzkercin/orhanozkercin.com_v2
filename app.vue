@@ -1,6 +1,8 @@
 <template>
   <Html lang="en" class="dark">
-    <NuxtPage class="container mx-auto" />
+    <Body class="container mx-auto">
+      <NuxtPage />
+    </Body>
   </Html>
 </template>
 
