@@ -4,7 +4,7 @@ module.exports = {
   darkMode: 'class',
   mode: 'jit',
   content: [
-    './components/*.{vue,js}',
+    './componesnts/*.{vue,js}',
     './components/**/*.{vue,js}',
     './pages/*.vue',
     './pages/**/*.vue',
@@ -13,8 +13,19 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1.5rem',
+      },
+    },
     fontFamily: {
       logo: ['Mea Culpa', 'cursive'],
+    },
+    extend: {
+      colors: {
+        primary: '#E2703A',
+      },
     },
   },
   plugins: [],

@@ -5,7 +5,7 @@
 
 @layer components {
   .dark {
-    @apply bg-slate-900 text-slate-400;
+    @apply bg-zinc-900 text-slate-400;
 
     h1,
     h2,
@@ -15,6 +15,5 @@
     h6 {
       @apply text-slate-400;
     }
-
   }
 }
