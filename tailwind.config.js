@@ -19,12 +19,14 @@ module.exports = {
         DEFAULT: '1.5rem',
       },
     },
-    fontFamily: {
-      logo: ['Mea Culpa', 'cursive'],
-    },
+
     extend: {
       colors: {
         primary: '#E2703A',
+      },
+      fontFamily: {
+        logo: ['Mea Culpa', 'cursive'],
+        pofuduk: ['Nunito', 'sans-serif'],
       },
     },
   },
