@@ -22,10 +22,7 @@
           </ul>
         </nav>
         <div class="border-l border-l-sky-300 dark:border-l-slate-800 pl-3 flex gap-x-3">
-          <a
-            class="hover:text-slate-900 dark:hover:text-slate-200"
-            href="https://github.com/OrhanOzkercin"
-          >
+          <a class="hover:text-slate-900 dark:hover:text-slate-200" href="https://github.com/OrhanOzkercin">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -45,10 +42,7 @@
               </g>
             </svg>
           </a>
-          <a
-            class="hover:text-slate-900 dark:hover:text-slate-200"
-            href="https://www.linkedin.com/in/orhanozkercin/"
-          >
+          <a class="hover:text-slate-900 dark:hover:text-slate-200" href="https://www.linkedin.com/in/orhanozkercin/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -108,33 +102,19 @@
           viewBox="0 0 24 24"
         >
           <g fill="none">
-            <path
-              d="M20 20L4 4m16 0L4 20"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-            />
+            <path d="M20 20L4 4m16 0L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </g>
         </svg>
       </button>
       <ul class="flex flex-col items-center justify-center h-full gap-8 animate-fade">
         <li>
-          <NuxtLink
-            class="transition-colors duration-500 hover:text-primary text-6xl"
-            to="#"
-          >About Me</NuxtLink>
+          <NuxtLink class="transition-colors duration-500 hover:text-primary text-6xl" to="#">About Me</NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            class="transition-colors duration-500 hover:text-primary text-6xl"
-            to="#"
-          >My Talks</NuxtLink>
+          <NuxtLink class="transition-colors duration-500 hover:text-primary text-6xl" to="#">My Talks</NuxtLink>
         </li>
         <li>
-          <NuxtLink
-            class="transition-colors duration-500 hover:text-primary text-6xl"
-            to="#"
-          >My Blog</NuxtLink>
+          <NuxtLink class="transition-colors duration-500 hover:text-primary text-6xl" to="#">My Blog</NuxtLink>
         </li>
       </ul>
     </nav>
@@ -146,19 +126,17 @@ import { useColorMode } from '~~/store/useDarkMode';
 
 const colorModeStore = useColorMode();
 
-let mobileMenuStatus = ref<'open' | 'close'>('close')
+let mobileMenuStatus = ref<'open' | 'close'>('close');
 
 const toggleColorMode = () => {
   colorModeStore.toggleColorMode();
 };
 
-
 const toggleMobileMenu = () => {
-  mobileMenuStatus.value = mobileMenuStatus.value === 'close' ? 'open' : 'close'
-}
-
+  mobileMenuStatus.value = mobileMenuStatus.value === 'close' ? 'open' : 'close';
+};
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 </style>

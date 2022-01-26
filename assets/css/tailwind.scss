@@ -26,9 +26,11 @@
       0% {
         opacity: 0;
       }
+
       50% {
         opacity: 0.5;
       }
+
       100% {
         opacity: 1;
       }
@@ -37,16 +39,20 @@
 
   .animate-rubber-band {
     animation: rubberband 1s;
+
     @keyframes rubberband {
       0% {
         transform: scale3d(1, 1, 1);
       }
+
       35% {
         transform: scale3d(1.25, 0.75, 1);
       }
+
       45% {
         transform: scale3d(0.75, 1, 1);
       }
+
       60% {
         transform: scale3d(1.2, 0.8, 1);
       }
