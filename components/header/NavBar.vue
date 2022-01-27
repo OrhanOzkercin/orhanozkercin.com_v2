@@ -8,7 +8,7 @@
         <span class="font-logo text-primary text-4xl">O</span>
       </NuxtLink>
       <div class="relative hidden lg:flex items-center ml-auto">
-        <nav class="text-sm leading-6 font-semibold dark:text-slate-100 mr-3">
+        <nav class="text-sm leading-6 dark:text-slate-100 mr-3">
           <ul class="flex gap-x-3">
             <li>
               <NuxtLink class="transition-colors duration-500 hover:text-primary" to="#">About Me</NuxtLink>
