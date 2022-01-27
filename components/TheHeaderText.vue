@@ -1,25 +1,24 @@
 <template>
-  <div ref="headerWord" class="absolute top-16 left-0">
-    <h1 :aria-label="theWord.join()" class="header">
-      <template v-for="word in theWord">
+  <div ref="headerWord" class="relative">
+    <h1
+      :aria-label="theWord.join()"
+      class="before:content-['<h1>'] before:text-gray-500 before:text-2xl before:md:text-3xl before:font-element before:absolute before:-top-8 after:content-['</h1>'] after:text-gray-500 after:text-2xl after:md:text-3xl after:font-element after:absolute after:-bottom-1 after:lg:bottom-4 my-20"
+    >
+      <template v-for="(word, index) in theWord">
         <span
-          class="inline-block text-4xl md:text-6xl lg:text-9xl tracking-wide font-pofuduk cursor-default text-transparent bg-clip-text bg-gradient-to-t from-slate-900 to-slate-400 dark:from-slate-50 dark:to-slate-100"
+          class="inline-block text-4xl md:text-6xl min-w-[0.5rem] lg:min-w-[2rem] lg:text-9xl tracking-wide font-pofuduk cursor-default text-transparent bg-clip-text bg-gradient-to-t from-slate-900 to-slate-400 dark:from-slate-50 dark:to-slate-100"
           v-for="letter in word"
         >
           {{ letter }}
         </span>
-        <br />
+        <br v-if="index % 2 === 0" />
       </template>
     </h1>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Colors from 'tailwindcss/colors';
-const props = defineProps<{
-  theWord: string[];
-}>();
-console.log(props.theWord);
+const props = defineProps<{ theWord: string[] }>();
 
 const { theWord } = toRefs(props);
 
@@ -36,21 +35,11 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
 
     element.classList.add('animated');
     element.classList.add('rubberBand');
-
-    element.classList.remove('bg-gradient-to-t');
-    element.classList.remove('from-slate-900');
-    element.classList.remove('to-slate-400');
-    element.classList.add('dark:bg-primary');
   });
   headerWord.addEventListener('animationend', (e) => {
     const element = e.target as HTMLElement;
     element.classList.remove('animated');
     element.classList.remove('rubberBand');
-
-    element.classList.add('bg-gradient-to-t');
-    element.classList.add('from-slate-900');
-    element.classList.add('to-slate-400');
-    element.classList.remove('dark:bg-primary');
   });
 }
 </script>
@@ -65,7 +54,7 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
   color: #515152;
   font-size: 1.8rem;
   position: absolute;
-  margin-top: -1.5rem;
+  top: -2rem;
   // margin-left: -1.5rem;
 }
 .header::after {
@@ -73,6 +62,7 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
   color: #515152;
   font-size: 1.8rem;
   position: absolute;
-  // margin-left: -1.5rem;
+  bottom: 0.5rem;
+  margin-left: 1rem;
 }
 </style>
