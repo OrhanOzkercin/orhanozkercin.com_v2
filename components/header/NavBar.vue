@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 w-full backdrop-blur-sm flex-none lg:border-b lg:border-separate lg:border-slate-900/10 dark:border-slate-50/[0.1]"
+    class="sticky top-0 z-50 w-full backdrop-blur-md flex-none lg:border-b lg:border-separate lg:border-slate-900/10 dark:border-slate-50/[0.1]"
   >
     <div class="flex items-center py-3">
       <NuxtLink class="logo md:mr-3 flex-none overflow-hidden md:w-auto" to="/">
