@@ -66,7 +66,7 @@
       </div>
 
       <div
-        class="relative flex lg:hidden items-center ml-auto hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer"
+        class="relative flex lg:hidden z-50 items-center ml-auto hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer"
       >
         <button @click="toggleMobileMenu">
           <svg
@@ -88,7 +88,7 @@
   </div>
   <div
     v-if="mobileMenuStatus === 'open'"
-    class="fixed top-0 left-0 w-full h-screen animate-fade backdrop-blur-lg dark:bg-slate-800/65"
+    class="fixed top-0 z-50 left-0 w-full h-screen animate-fade backdrop-blur-lg dark:bg-slate-800/65"
   >
     <nav class="text-sm leading-6 font-semibold dark:text-slate-100 h-full mr-3">
       <button @click="toggleMobileMenu" class="fixed top-4 right-5">
