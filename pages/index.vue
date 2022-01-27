@@ -1,14 +1,18 @@
 <template>
   <Header />
-  <main class="relative flex">
-    <TheHeaderText :the-word="helloWord" />
+  <main class="relative">
+    <div>
+      <TheHeaderText class="block mt-24 mb-14" :the-word="helloWord" />
+    </div>
+    <TheParagraphText class="relative mb-16">Frontend Developer</TheParagraphText>
 
-    <img class="w-[300px] h-auto" src="@/assets/images/rm_pp.png" alt="Orhan Özkerçin" />
+    <ThePrimaryButton>Contact me</ThePrimaryButton>
+    <!-- <img class="w-[300px] h-auto" src="@/assets/images/rm_pp.png" alt="Orhan Özkerçin" /> -->
   </main>
 </template>
 
 <script setup lang="ts">
-const helloWord = ['Hello', "I'm Orhan!"];
+const helloWord = ['Hello!', "I'm Orhan"];
 </script>
 
 <style scoped>
