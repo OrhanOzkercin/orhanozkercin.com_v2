@@ -22,11 +22,13 @@ module.exports = {
 
     extend: {
       colors: {
-        primary: '#E2703A',
+        primary: '#22d3ee',
       },
       fontFamily: {
         logo: ['Mea Culpa', 'cursive'],
         pofuduk: ['Nunito', 'sans-serif'],
+        element: ['Comforter', 'sans-serif'],
+        sans: ['Rubik', 'sans-serif'],
       },
     },
   },
