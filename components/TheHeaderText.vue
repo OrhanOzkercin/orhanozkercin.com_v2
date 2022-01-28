@@ -6,7 +6,7 @@
     >
       <template v-for="(word, index) in theWord">
         <span
-          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-900 to-slate-400 bg-clip-text font-pofuduk text-4xl tracking-wide text-transparent dark:from-slate-50 dark:to-slate-100 md:text-6xl lg:min-w-[2rem] lg:text-9xl"
+          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-50 to-slate-200 bg-clip-text font-pofuduk text-4xl tracking-wide text-transparent md:text-6xl lg:min-w-[2rem] lg:text-9xl"
           v-for="letter in word"
         >
           {{ letter }}

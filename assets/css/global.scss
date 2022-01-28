@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
 html,
 body,
 #__nuxt,
 #__layout {
   height: 100% !important;
   width: 100% !important;
+  @apply bg-zinc-900 text-slate-400;
+
 }

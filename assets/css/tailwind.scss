@@ -4,20 +4,6 @@
 @tailwind variants;
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
 
-@layer components {
-  .dark {
-    @apply bg-zinc-900 text-slate-400;
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      @apply text-slate-400;
-    }
-  }
-}
 
 @layer utilities {
   .animate-fade {

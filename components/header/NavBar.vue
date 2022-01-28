@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-0 z-50 w-full flex-none backdrop-blur-md dark:border-slate-50/[0.1] lg:border-separate lg:border-b lg:border-slate-900/10"
+    class="sticky top-0 z-50 w-full flex-none border-b border-slate-50/[0.1] backdrop-blur-md lg:border-separate"
   >
     <div class="flex items-center py-3">
       <NuxtLink class="logo flex-none overflow-hidden md:mr-3 md:w-auto" to="/">
@@ -8,7 +8,7 @@
         <span class="font-logo text-4xl text-primary">O</span>
       </NuxtLink>
       <div class="relative ml-auto hidden items-center lg:flex">
-        <nav class="mr-3 text-sm leading-6 dark:text-slate-100">
+        <nav class="mr-3 text-sm leading-6 text-slate-100">
           <ul class="flex gap-x-3">
             <li>
               <NuxtLink
@@ -33,11 +33,9 @@
             </li>
           </ul>
         </nav>
-        <div
-          class="flex gap-x-3 border-l border-l-sky-300 pl-3 dark:border-l-slate-800"
-        >
+        <div class="flex gap-x-3 border-l border-l-slate-800">
           <a
-            class="hover:text-slate-900 dark:hover:text-slate-200"
+            class="hover:text-slate-200"
             href="https://github.com/OrhanOzkercin"
           >
             <svg
@@ -60,7 +58,7 @@
             </svg>
           </a>
           <a
-            class="hover:text-slate-900 dark:hover:text-slate-200"
+            class="hover:text-slate-200"
             href="https://www.linkedin.com/in/orhanozkercin/"
           >
             <svg
@@ -86,7 +84,7 @@
       </div>
 
       <div
-        class="relative z-50 ml-auto flex cursor-pointer items-center hover:text-slate-900 dark:hover:text-slate-200 lg:hidden"
+        class="relative z-50 ml-auto flex cursor-pointer items-center hover:text-slate-200 lg:hidden"
       >
         <button @click="toggleMobileMenu">
           <svg
@@ -111,11 +109,9 @@
   </div>
   <div
     v-if="mobileMenuStatus === 'open'"
-    class="animate-fade dark:bg-slate-800/65 fixed top-0 left-0 z-50 h-screen w-full backdrop-blur-lg"
+    class="animate-fade bg-slate-800/65 fixed top-0 left-0 z-50 h-screen w-full backdrop-blur-lg"
   >
-    <nav
-      class="mr-3 h-full text-sm font-semibold leading-6 dark:text-slate-100"
-    >
+    <nav class="mr-3 h-full text-sm font-semibold leading-6 text-slate-100">
       <button @click="toggleMobileMenu" class="fixed top-4 right-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -166,15 +162,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useColorMode } from "~~/store/useDarkMode";
-
-const colorModeStore = useColorMode();
-
 let mobileMenuStatus = ref<"open" | "close">("close");
-
-const toggleColorMode = () => {
-  colorModeStore.toggleColorMode();
-};
 
 const toggleMobileMenu = () => {
   mobileMenuStatus.value =
