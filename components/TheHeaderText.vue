@@ -2,11 +2,11 @@
   <div ref="headerWord" class="relative">
     <h1
       :aria-label="theWord.join()"
-      class="before:content-['<h1>'] before:text-gray-500 before:text-2xl before:md:text-3xl before:font-element before:absolute before:-top-8 after:content-['</h1>'] after:text-gray-500 after:text-2xl after:md:text-3xl after:font-element after:absolute after:-bottom-1 after:lg:bottom-4 my-20"
+      class="my-20 before:absolute before:-top-8 before:font-element before:text-2xl before:text-gray-500 before:content-['<h1>'] after:absolute after:-bottom-1 after:font-element after:text-2xl after:text-gray-500 after:content-['</h1>'] before:md:text-3xl after:md:text-3xl after:lg:bottom-4"
     >
       <template v-for="(word, index) in theWord">
         <span
-          class="inline-block text-4xl md:text-6xl min-w-[0.5rem] lg:min-w-[2rem] lg:text-9xl tracking-wide font-pofuduk cursor-default text-transparent bg-clip-text bg-gradient-to-t from-slate-900 to-slate-400 dark:from-slate-50 dark:to-slate-100"
+          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-900 to-slate-400 bg-clip-text font-pofuduk text-4xl tracking-wide text-transparent dark:from-slate-50 dark:to-slate-100 md:text-6xl lg:min-w-[2rem] lg:text-9xl"
           v-for="letter in word"
         >
           {{ letter }}
@@ -29,28 +29,28 @@ onMounted(() => {
 });
 
 function listenHoverOnLetters(headerWord: HTMLElement) {
-  headerWord.addEventListener('mouseover', (e) => {
+  headerWord.addEventListener("mouseover", (e) => {
     const element = e.target as HTMLElement;
-    if (element.tagName.toLowerCase() == 'h1') return;
+    if (element.tagName.toLowerCase() == "h1") return;
 
-    element.classList.add('animated');
-    element.classList.add('rubberBand');
+    element.classList.add("animated");
+    element.classList.add("rubberBand");
   });
-  headerWord.addEventListener('animationend', (e) => {
+  headerWord.addEventListener("animationend", (e) => {
     const element = e.target as HTMLElement;
-    element.classList.remove('animated');
-    element.classList.remove('rubberBand');
+    element.classList.remove("animated");
+    element.classList.remove("rubberBand");
   });
 }
 </script>
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Comforter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
 .header::before,
 .header::after {
-  font-family: 'Comforter', cursive;
+  font-family: "Comforter", cursive;
 }
 .header::before {
-  content: '<h1>';
+  content: "<h1>";
   color: #515152;
   font-size: 1.8rem;
   position: absolute;
@@ -58,7 +58,7 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
   // margin-left: -1.5rem;
 }
 .header::after {
-  content: '</h1>';
+  content: "</h1>";
   color: #515152;
   font-size: 1.8rem;
   position: absolute;

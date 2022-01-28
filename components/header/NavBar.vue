@@ -1,28 +1,45 @@
 <template>
   <div
-    class="sticky top-0 z-50 w-full backdrop-blur-md flex-none lg:border-b lg:border-separate lg:border-slate-900/10 dark:border-slate-50/[0.1]"
+    class="sticky top-0 z-50 w-full flex-none backdrop-blur-md dark:border-slate-50/[0.1] lg:border-separate lg:border-b lg:border-slate-900/10"
   >
     <div class="flex items-center py-3">
-      <NuxtLink class="logo md:mr-3 flex-none overflow-hidden md:w-auto" to="/">
+      <NuxtLink class="logo flex-none overflow-hidden md:mr-3 md:w-auto" to="/">
         <span class="sr-only">Orhan Özkerçin Personal Site</span>
-        <span class="font-logo text-primary text-4xl">O</span>
+        <span class="font-logo text-4xl text-primary">O</span>
       </NuxtLink>
-      <div class="relative hidden lg:flex items-center ml-auto">
-        <nav class="text-sm leading-6 dark:text-slate-100 mr-3">
+      <div class="relative ml-auto hidden items-center lg:flex">
+        <nav class="mr-3 text-sm leading-6 dark:text-slate-100">
           <ul class="flex gap-x-3">
             <li>
-              <NuxtLink class="transition-colors duration-500 hover:text-primary" to="#">About Me</NuxtLink>
+              <NuxtLink
+                class="transition-colors duration-500 hover:text-primary"
+                to="#"
+                >About Me</NuxtLink
+              >
             </li>
             <li>
-              <NuxtLink class="transition-colors duration-500 hover:text-primary" to="#">My Talks</NuxtLink>
+              <NuxtLink
+                class="transition-colors duration-500 hover:text-primary"
+                to="#"
+                >My Talks</NuxtLink
+              >
             </li>
             <li>
-              <NuxtLink class="transition-colors duration-500 hover:text-primary" to="#">My Blog</NuxtLink>
+              <NuxtLink
+                class="transition-colors duration-500 hover:text-primary"
+                to="#"
+                >My Blog</NuxtLink
+              >
             </li>
           </ul>
         </nav>
-        <div class="border-l border-l-sky-300 dark:border-l-slate-800 pl-3 flex gap-x-3">
-          <a class="hover:text-slate-900 dark:hover:text-slate-200" href="https://github.com/OrhanOzkercin">
+        <div
+          class="flex gap-x-3 border-l border-l-sky-300 pl-3 dark:border-l-slate-800"
+        >
+          <a
+            class="hover:text-slate-900 dark:hover:text-slate-200"
+            href="https://github.com/OrhanOzkercin"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -42,7 +59,10 @@
               </g>
             </svg>
           </a>
-          <a class="hover:text-slate-900 dark:hover:text-slate-200" href="https://www.linkedin.com/in/orhanozkercin/">
+          <a
+            class="hover:text-slate-900 dark:hover:text-slate-200"
+            href="https://www.linkedin.com/in/orhanozkercin/"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
@@ -66,7 +86,7 @@
       </div>
 
       <div
-        class="relative flex lg:hidden z-50 items-center ml-auto hover:text-slate-900 dark:hover:text-slate-200 cursor-pointer"
+        class="relative z-50 ml-auto flex cursor-pointer items-center hover:text-slate-900 dark:hover:text-slate-200 lg:hidden"
       >
         <button @click="toggleMobileMenu">
           <svg
@@ -79,7 +99,10 @@
             viewBox="0 0 24 24"
           >
             <g fill="none">
-              <path d="M21 18H9v-2h12v2zm0-5H3v-2h18v2zm0-5H9V6h12v2z" fill="currentColor" />
+              <path
+                d="M21 18H9v-2h12v2zm0-5H3v-2h18v2zm0-5H9V6h12v2z"
+                fill="currentColor"
+              />
             </g>
           </svg>
         </button>
@@ -88,9 +111,11 @@
   </div>
   <div
     v-if="mobileMenuStatus === 'open'"
-    class="fixed top-0 z-50 left-0 w-full h-screen animate-fade backdrop-blur-lg dark:bg-slate-800/65"
+    class="animate-fade dark:bg-slate-800/65 fixed top-0 left-0 z-50 h-screen w-full backdrop-blur-lg"
   >
-    <nav class="text-sm leading-6 font-semibold dark:text-slate-100 h-full mr-3">
+    <nav
+      class="mr-3 h-full text-sm font-semibold leading-6 dark:text-slate-100"
+    >
       <button @click="toggleMobileMenu" class="fixed top-4 right-5">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -102,19 +127,38 @@
           viewBox="0 0 24 24"
         >
           <g fill="none">
-            <path d="M20 20L4 4m16 0L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            <path
+              d="M20 20L4 4m16 0L4 20"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
           </g>
         </svg>
       </button>
-      <ul class="flex flex-col items-center justify-center h-full gap-8 animate-fade">
+      <ul
+        class="animate-fade flex h-full flex-col items-center justify-center gap-8"
+      >
         <li>
-          <NuxtLink class="transition-colors duration-500 hover:text-primary text-6xl" to="#">About Me</NuxtLink>
+          <NuxtLink
+            class="text-6xl transition-colors duration-500 hover:text-primary"
+            to="#"
+            >About Me</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="transition-colors duration-500 hover:text-primary text-6xl" to="#">My Talks</NuxtLink>
+          <NuxtLink
+            class="text-6xl transition-colors duration-500 hover:text-primary"
+            to="#"
+            >My Talks</NuxtLink
+          >
         </li>
         <li>
-          <NuxtLink class="transition-colors duration-500 hover:text-primary text-6xl" to="#">My Blog</NuxtLink>
+          <NuxtLink
+            class="text-6xl transition-colors duration-500 hover:text-primary"
+            to="#"
+            >My Blog</NuxtLink
+          >
         </li>
       </ul>
     </nav>
@@ -122,21 +166,22 @@
 </template>
 
 <script lang="ts" setup>
-import { useColorMode } from '~~/store/useDarkMode';
+import { useColorMode } from "~~/store/useDarkMode";
 
 const colorModeStore = useColorMode();
 
-let mobileMenuStatus = ref<'open' | 'close'>('close');
+let mobileMenuStatus = ref<"open" | "close">("close");
 
 const toggleColorMode = () => {
   colorModeStore.toggleColorMode();
 };
 
 const toggleMobileMenu = () => {
-  mobileMenuStatus.value = mobileMenuStatus.value === 'close' ? 'open' : 'close';
+  mobileMenuStatus.value =
+    mobileMenuStatus.value === "close" ? "open" : "close";
 };
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap");
 </style>

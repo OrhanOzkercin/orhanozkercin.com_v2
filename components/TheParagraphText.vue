@@ -12,10 +12,10 @@
 }
 .paragraph::before,
 .paragraph::after {
-  font-family: 'Comforter', cursive;
+  font-family: "Comforter", cursive;
 }
 .paragraph::before {
-  content: '<p>';
+  content: "<p>";
   color: #515152;
   font-size: 1.5rem;
   position: absolute;
@@ -23,7 +23,7 @@
   // margin-left: -1.5rem;
 }
 .paragraph::after {
-  content: '</p>';
+  content: "</p>";
   color: #515152;
   font-size: 1.5rem;
   position: absolute;

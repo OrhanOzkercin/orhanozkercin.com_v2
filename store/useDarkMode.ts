@@ -1,17 +1,17 @@
-import { defineStore } from 'pinia';
+import { defineStore } from "pinia";
 
-export const useColorMode = defineStore('colorMode', {
+export const useColorMode = defineStore("colorMode", {
   state: () => {
     return {
-      colorMode: 'dark',
+      colorMode: "dark",
     };
   },
   actions: {
     toggleColorMode() {
-      this.colorMode === 'dark'
-        ? document.documentElement.classList.add('dark')
-        : document.documentElement.classList.remove('dark');
-      this.colorMode = this.colorMode === 'dark' ? 'light' : 'dark';
+      this.colorMode === "dark"
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+      this.colorMode = this.colorMode === "dark" ? "light" : "dark";
     },
   },
 });
