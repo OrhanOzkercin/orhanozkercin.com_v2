@@ -1,7 +1,5 @@
 <template>
-  <button
-    class="border-2 border-primary px-16 py-3 font-medium tracking-widest text-primary"
-  >
+  <button class="btn-primary">
     <slot />
   </button>
 </template>

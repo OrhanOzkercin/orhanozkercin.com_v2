@@ -22,7 +22,12 @@ module.exports = {
     extend: {
       colors: {
         primary: "#22d3ee",
+        "text-color": colors.slate[400],
       },
+      boxShadow: {
+        "primary-button": `inset 0 0 0 2px #22d3ee`,
+      },
+
       fontFamily: {
         logo: ["Mea Culpa", "cursive"],
         pofuduk: ["Nunito", "sans-serif"],
