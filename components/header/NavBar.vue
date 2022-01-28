@@ -33,7 +33,7 @@
             </li>
           </ul>
         </nav>
-        <div class="flex gap-x-3 border-l border-l-slate-800">
+        <div class="ml-3 flex gap-x-3 border-l border-l-slate-800 pl-4">
           <a
             class="hover:text-slate-200"
             href="https://github.com/OrhanOzkercin"
@@ -107,6 +107,7 @@
       </div>
     </div>
   </div>
+  <!-- Mobile Menu -->
   <div
     v-if="mobileMenuStatus === 'open'"
     class="animate-fade bg-slate-800/65 fixed top-0 left-0 z-50 h-screen w-full backdrop-blur-lg"
