@@ -1,14 +1,15 @@
 <template>
-  <Header />
-  <main class="relative">
-    <div>
-      <TheHeaderText class="mt-24 mb-14 block" :the-word="helloWord" />
-    </div>
-    <TheParagraphText class="relative mb-16"
-      >Frontend Developer</TheParagraphText
-    >
-
-    <ThePrimaryButton>Contact me</ThePrimaryButton>
+  <main class="relative ml-6">
+    <TheHeaderText
+      class="mt-24 mb-14 block"
+      header-type="h1"
+      font-size="6rem"
+      :the-word="helloWord"
+    />
+    <TheParagraphText :fontSize="'2rem'" class="relative mb-16"
+      >JavaScript Developer
+    </TheParagraphText>
+    <ThePrimaryButton class="mt-8">Contact me</ThePrimaryButton>
     <!-- <img class="w-[300px] h-auto" src="@/assets/images/rm_pp.png" alt="Orhan Özkerçin" /> -->
   </main>
 </template>
@@ -18,7 +19,6 @@ const helloWord = ["Hello!", "I'm Orhan"];
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 img {
   width: 100%;
   height: auto;

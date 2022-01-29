@@ -1,26 +1,41 @@
 <template>
   <div ref="headerWord" class="relative">
-    <h1
+    <component
+      :before-tag="'<' + headerType + '>'"
+      :after-tag="'</' + headerType + '>'"
+      :is="headerType"
       :aria-label="theWord.join()"
-      class="my-20 before:absolute before:-top-8 before:font-element before:text-2xl before:text-gray-500 before:content-['<h1>'] after:absolute after:-bottom-1 after:font-element after:text-2xl after:text-gray-500 after:content-['</h1>'] before:md:text-3xl after:md:text-3xl after:lg:bottom-4"
+      class="header my-20 before:font-element after:font-element"
     >
       <template v-for="(word, index) in theWord">
         <span
-          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-50 to-slate-200 bg-clip-text font-pofuduk text-4xl tracking-wide text-transparent md:text-6xl lg:min-w-[2rem] lg:text-9xl"
+          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-50 to-slate-200 bg-clip-text text-transparent"
           v-for="letter in word"
         >
-          {{ letter }}
+          {{ letter === " " ? "&nbsp;" : letter }}
         </span>
         <br v-if="index % 2 === 0" />
       </template>
-    </h1>
+    </component>
   </div>
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{ theWord: string[] }>();
+import { useStore } from "~~/store/store";
 
-const { theWord } = toRefs(props);
+interface Props {
+  fontSize?: string;
+  headerType?: string;
+  theWord?: string[];
+}
+const props = withDefaults(defineProps<Props>(), {
+  fontSize: "1rem",
+  headerType: "h1",
+  theWord: () => ["Default", "Text"],
+});
+
+const { tagColor, tagFontSize } = useStore();
+const { theWord, headerType } = reactive(toRefs(props));
 
 const headerWord = ref<HTMLElement>(null);
 
@@ -31,7 +46,7 @@ onMounted(() => {
 function listenHoverOnLetters(headerWord: HTMLElement) {
   headerWord.addEventListener("mouseover", (e) => {
     const element = e.target as HTMLElement;
-    if (element.tagName.toLowerCase() == "h1") return;
+    if (element.tagName.toLowerCase() == headerType) return;
 
     element.classList.add("animated");
     element.classList.add("rubberBand");
@@ -43,26 +58,35 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
   });
 }
 </script>
+
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
-.header::before,
-.header::after {
-  font-family: "Comforter", cursive;
-}
 .header::before {
-  content: "<h1>";
-  color: #515152;
-  font-size: 1.8rem;
+  content: attr(before-tag);
+  color: v-bind(tagColor);
+  font-size: v-bind(tagFontSize);
   position: absolute;
-  top: -2rem;
+  top: -0.7rem;
   // margin-left: -1.5rem;
 }
 .header::after {
-  content: "</h1>";
-  color: #515152;
-  font-size: 1.8rem;
+  content: attr(after-tag);
+  color: v-bind(tagColor);
+  font-size: v-bind(tagFontSize);
   position: absolute;
-  bottom: 0.5rem;
-  margin-left: 1rem;
+  bottom: -0.7rem;
+  left: 0;
+}
+
+.header span {
+  font-size: v-bind(fontSize);
+}
+
+@media screen and (max-width: 1024px) {
+  .header::after {
+    bottom: 0rem;
+  }
+  .header span {
+    font-size: v-bind(fontSize);
+  }
 }
 </style>
