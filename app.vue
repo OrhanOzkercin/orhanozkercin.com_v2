@@ -1,5 +1,5 @@
 <template>
-  <NuxtPage class="ml-6" />
+  <NuxtPage />
 </template>
 
 <script lang="ts" setup></script>
