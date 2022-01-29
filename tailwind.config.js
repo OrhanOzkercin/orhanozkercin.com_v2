@@ -24,14 +24,14 @@ module.exports = {
         primary: "#22d3ee",
         "text-color": colors.slate[400],
       },
-      boxShadow: {
-        "primary-button": `inset 0 0 0 2px #22d3ee`,
-      },
+      boxShadow: ({ theme }) => ({
+        "primary-button": `inset 0 0 0 2px ${theme("colors.primary")}`,
+      }),
 
       fontFamily: {
         logo: ["Mea Culpa", "cursive"],
         pofuduk: ["Nunito", "sans-serif"],
-        element: ["Comforter", "sans-serif"],
+        element: ["Dancing Script", "sans-serif"],
         sans: ["Rubik", "sans-serif"],
       },
     },
