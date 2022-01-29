@@ -1,9 +1,9 @@
 <template>
-  <Html lang="en" class="h-full">
+  <Html lang="en" class="h-full" name="1">
     <Body class="container mx-auto min-h-screen font-sans">
       <TheNavBar />
 
-      <span class="tags top-tags"> &lt;/html&gt; <br /> </span>
+      <span class="tags top-tags"> &lt;html&gt; <br /> </span>
       <slot />
       <span class="tags bottom-tags"
         ><br />
@@ -14,29 +14,26 @@
 </template>
 
 <script setup>
-import TheNavBar from "../components/header/TheNavBar.vue";
+import TheNavBar from "../components/TheNavBar.vue";
+
+import { useStore } from "~~/store/store";
+const { tagColor, tagFontSize } = useStore();
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
 .tags,
 .top-tags::after,
 .bottom-tags::before {
   font-family: "Dancing Script", cursive;
-  color: #515152;
+  color: v-bind(tagColor);
 }
 .tags {
   display: inline-block;
   margin-top: 2rem;
-  font-size: 1.7rem;
+  font-size: v-bind(tagFontSize);
   letter-spacing: 3px;
-}
-
-.bottom-tags {
-  margin-top: 5rem;
-}
-
-.top-tags {
-  margin-bottom: 2rem;
 }
 
 .top-tags:after {
@@ -47,7 +44,6 @@ import TheNavBar from "../components/header/TheNavBar.vue";
 
 .bottom-tags:before {
   content: "</body>";
-  color: #515152;
   position: absolute;
   margin-left: 1.5rem;
 }
