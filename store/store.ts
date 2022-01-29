@@ -3,6 +3,6 @@ import colors from "tailwindcss/colors";
 export const useStore = defineStore("tagColor", {
   state: () => ({
     tagFontSize: "1.3rem",
-    tagColor: colors.slate[600],
+    tagColor: colors.zinc[800],
   }),
 });
