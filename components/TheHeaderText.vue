@@ -9,6 +9,11 @@
     >
       <template v-for="(word, index) in theWord">
         <span
+          :class="[
+            index === 0
+              ? `text-xl md:text-[${fontSize * 0.9}px] lg:text-[${fontSize}px]`
+              : 'after',
+          ]"
           class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-50 to-slate-200 bg-clip-text text-transparent"
           v-for="letter in word"
         >
@@ -24,7 +29,7 @@
 import { useStore } from "~~/store/store";
 
 interface Props {
-  fontSize?: string;
+  fontSize?: number;
   headerType?: string;
   theWord?: string[];
 }
@@ -63,7 +68,7 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
 .header::before {
   content: attr(before-tag);
   color: v-bind(tagColor);
-  font-size: v-bind(tagFontSize);
+  // font-size: v-bind(tagFontSize);
   position: absolute;
   top: -0.7rem;
   // margin-left: -1.5rem;
@@ -71,14 +76,14 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
 .header::after {
   content: attr(after-tag);
   color: v-bind(tagColor);
-  font-size: v-bind(tagFontSize);
+  // font-size: v-bind(tagFontSize);
   position: absolute;
   bottom: -0.7rem;
   left: 0;
 }
 
 .header span {
-  font-size: v-bind(fontSize);
+  // font-size: v-bind(fontSize);
 }
 
 @media screen and (max-width: 1024px) {
@@ -86,7 +91,7 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
     bottom: 0rem;
   }
   .header span {
-    font-size: v-bind(fontSize);
+    // font-size: v-bind(fontSize);
   }
 }
 </style>

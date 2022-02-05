@@ -3,7 +3,7 @@
     <TheHeaderText
       class="mt-24 mb-14 block"
       header-type="h1"
-      font-size="6rem"
+      :font-size="75"
       :the-word="helloWord"
     />
     <TheParagraphText :fontSize="'2rem'" class="relative mb-16"
