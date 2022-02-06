@@ -1,11 +1,6 @@
 <template>
   <main class="relative ml-6">
-    <TheHeaderText
-      class="mt-24 mb-14 block"
-      header-type="h1"
-      font-size="6rem"
-      :the-word="helloWord"
-    />
+    <TheHeaderText class="mt-24 mb-14 block" :the-word="helloWord" />
     <TheParagraphText :fontSize="'2rem'" class="relative mb-16"
       >JavaScript Developer
     </TheParagraphText>
