@@ -1,5 +1,5 @@
 <template>
-  <div ref="headerWord" class="relative">
+  <div ref="headerWordContainer" class="relative">
     <component
       :before-tag="'<' + headerType + '>'"
       :after-tag="'</' + headerType + '>'"
@@ -9,12 +9,7 @@
     >
       <template v-for="(word, index) in theWord">
         <span
-          :class="[
-            index === 0
-              ? `text-xl md:text-[${fontSize * 0.9}px] lg:text-[${fontSize}px]`
-              : 'after',
-          ]"
-          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-50 to-slate-200 bg-clip-text text-transparent"
+          class="inline-block min-w-[0.5rem] cursor-default bg-gradient-to-t from-slate-50 to-slate-200 bg-clip-text leading-tight text-transparent"
           v-for="letter in word"
         >
           {{ letter === " " ? "&nbsp;" : letter }}
@@ -28,35 +23,82 @@
 <script lang="ts" setup>
 import { useStore } from "~~/store/store";
 
+/* ---------------------------------- Props --------------------------------- */
+
+interface fontSize {
+  default?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+}
+
 interface Props {
-  fontSize?: number;
+  fontSize?: fontSize;
+  fontSizeUnit?: string;
   headerType?: string;
   theWord?: string[];
 }
+
 const props = withDefaults(defineProps<Props>(), {
-  fontSize: "1rem",
+  fontSize: (): Props["fontSize"] => ({
+    default: 4,
+    md: 5,
+    lg: 6,
+    xl: 7,
+  }),
+  fontSizeUnit: "rem",
   headerType: "h1",
   theWord: () => ["Default", "Text"],
 });
 
+/* ---------------------------------- State --------------------------------- */
+
 const { tagColor, tagFontSize } = useStore();
 const { theWord, headerType } = reactive(toRefs(props));
 
-const headerWord = ref<HTMLElement>(null);
+const headerWordContainer = ref<HTMLElement>(null);
+
+/* -------------------------------- Lifecycle ------------------------------- */
 
 onMounted(() => {
-  listenHoverOnLetters(headerWord.value);
+  listenHoverOnLetters(headerWordContainer.value);
+  console.log(xlFontSize.value);
 });
 
-function listenHoverOnLetters(headerWord: HTMLElement) {
-  headerWord.addEventListener("mouseover", (e) => {
+/* --------------------------------- Getters -------------------------------- */
+
+const fontSize = computed({
+  get: () => `${props.fontSize.default}${props.fontSizeUnit}`,
+  set: () => {},
+});
+const mdFontSize = computed({
+  get: () => `${props.fontSize.md}${props.fontSizeUnit}`,
+  set: () => {},
+});
+const lgFontSize = computed({
+  get: () => `${props.fontSize.lg}${props.fontSizeUnit}`,
+  set: () => {},
+});
+const xlFontSize = computed({
+  get: () => `${props.fontSize.xl}${props.fontSizeUnit}`,
+  set: () => {},
+});
+
+/* --------------------------------- Methods -------------------------------- */
+
+function getWindowWidth(): number {
+  return window.innerWidth;
+}
+
+function listenHoverOnLetters(headerWordContainer: HTMLElement) {
+  headerWordContainer.addEventListener("mouseover", (e) => {
     const element = e.target as HTMLElement;
     if (element.tagName.toLowerCase() == headerType) return;
 
     element.classList.add("animated");
     element.classList.add("rubberBand");
   });
-  headerWord.addEventListener("animationend", (e) => {
+  headerWordContainer.addEventListener("animationend", (e) => {
     const element = e.target as HTMLElement;
     element.classList.remove("animated");
     element.classList.remove("rubberBand");
@@ -68,30 +110,36 @@ function listenHoverOnLetters(headerWord: HTMLElement) {
 .header::before {
   content: attr(before-tag);
   color: v-bind(tagColor);
-  // font-size: v-bind(tagFontSize);
   position: absolute;
-  top: -0.7rem;
-  // margin-left: -1.5rem;
+  top: -0.8rem;
 }
 .header::after {
   content: attr(after-tag);
   color: v-bind(tagColor);
-  // font-size: v-bind(tagFontSize);
+  font-size: v-bind(tagFontSize);
   position: absolute;
-  bottom: -0.7rem;
+  bottom: -1.5rem;
   left: 0;
 }
 
 .header span {
-  // font-size: v-bind(fontSize);
+  font-size: v-bind(xlFontSize);
+}
+@media screen and (max-width: 1024px) {
+  .header span {
+    font-size: v-bind(lgFontSize);
+  }
 }
 
-@media screen and (max-width: 1024px) {
-  .header::after {
-    bottom: 0rem;
-  }
+@media screen and (max-width: 768px) {
   .header span {
-    // font-size: v-bind(fontSize);
+    font-size: v-bind(mdFontSize);
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .header span {
+    font-size: v-bind(fontSize);
   }
 }
 </style>
