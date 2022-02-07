@@ -5,57 +5,9 @@
 
 @layer components {
   .btn-primary {
-    position: relative;
-
     @apply border-0  px-14 py-4 font-medium tracking-widest text-primary shadow-primary-button transition-colors duration-200;
-
-    &::before,
-    &::after {
-      box-sizing: inherit;
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    &::before,
-    &::after {
-      border: 2px solid transparent;
-      width: 0;
-      height: 0;
-    }
-
-    &::before {
-      top: 0;
-      left: 0;
-    }
-
-    &::after {
-      bottom: 0;
-      right: 0;
-    }
-
-    &:hover {
-      color: white;
-    }
-
-    &:hover::before,
-    &:hover::after {
-      width: 100%;
-      height: 100%;
-    }
-
-    &:hover::before {
-      border-top-color: white;
-      border-right-color: white;
-      transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
-    }
-
-    &:hover::after {
-      border-bottom-color: white;
-      border-left-color: white;
-      transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
-        height 0.25s ease-out 0.75s;
-    }
+  }
+  .btn-secondary {
+    @apply border-0  px-14 py-4 font-medium tracking-widest text-secondary shadow-secondary-button transition-colors duration-200;
   }
 }
