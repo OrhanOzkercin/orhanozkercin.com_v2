@@ -9,12 +9,12 @@
         <button class="btn btn-primary mt-8">Contact me</button>
       </div>
       <div class="col-span-2 mr-10 hidden lg:block">
-        <img class="pp" src="~/assets/images/rm_pp2.png" alt="Orhan Özkerçin" />
+        <img class="pp" src="/images/rm_pp2.png" alt="Orhan Özkerçin" />
       </div>
     </header>
     <section class="relative">
       <div
-        class="after:absolute after:top-20 after:left-[20%] after:z-[999] after:text-[12rem] after:font-semibold after:text-text-color after:opacity-[2%] after:content-['About\00a0Me']"
+        class="after:absolute after:top-20 after:left-[20%] after:hidden after:font-semibold after:text-text-color after:opacity-[2%] after:content-['About\00a0Me'] after:md:block after:md:text-[6rem] after:lg:text-[10rem] after:xl:text-[12rem]"
       ></div>
       <div class="grid grid-cols-5">
         <div class="col-span-5 xl:col-span-3">
