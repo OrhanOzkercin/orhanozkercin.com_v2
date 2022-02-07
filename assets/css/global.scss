@@ -11,6 +11,15 @@ body,
   @apply bg-zinc-900 text-slate-400;
 }
 
+/* ----------------------------- Behavior Rules ----------------------------- */
+
+::selection {
+  @apply bg-primary text-white; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  @apply bg-primary text-white;
+}
+
 /* ---------------------------------- Utils --------------------------------- */
 
 .btn {
