@@ -21,7 +21,7 @@ module.exports = {
 
     extend: {
       colors: {
-        primary: "#22d3ee",
+        primary: colors.yellow[500],
         "text-color": colors.slate[400],
       },
       boxShadow: ({ theme }) => ({
