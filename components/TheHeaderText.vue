@@ -5,7 +5,7 @@
       :after-tag="'</' + headerType + '>'"
       :is="headerType"
       :aria-label="theWord.join()"
-      class="header my-20 before:font-element after:font-element"
+      class="header before:font-element after:font-element"
     >
       <template v-for="(word, index) in theWord">
         <span
