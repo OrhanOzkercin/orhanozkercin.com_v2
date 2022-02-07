@@ -7,7 +7,7 @@
   .btn-primary {
     position: relative;
 
-    @apply border-0  px-14 py-4 font-medium tracking-widest text-primary shadow-primary-button transition-colors  duration-200 active:text-red-500 active:shadow-red-500;
+    @apply border-0  px-14 py-4 font-medium tracking-widest text-primary shadow-primary-button transition-colors duration-200;
 
     &::before,
     &::after {
