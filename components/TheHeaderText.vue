@@ -62,7 +62,7 @@ const headerWordContainer = ref<HTMLElement>(null);
 
 onMounted(() => {
   listenHoverOnLetters(headerWordContainer.value);
-  console.log(xlFontSize.value);
+  console.log(lgFontSize.value);
 });
 
 /* --------------------------------- Getters -------------------------------- */
