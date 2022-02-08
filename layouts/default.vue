@@ -6,7 +6,7 @@
         type="text/css"
         href="https://widgets.superpeer.com/widget.css"
       />
-      <Script src="https://widgets.superpeer.com/widget.js"></Script>
+      <Script src="https://widgets.superpeer.com/widget.js" defer></Script>
     </Head>
     <Body class="container mx-auto min-h-screen font-sans">
       <TheNavBar />
