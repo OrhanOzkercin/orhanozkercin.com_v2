@@ -4,8 +4,8 @@
       <div class="col-span-5 md:col-span-3">
         <TheHeaderText
           class="mt-24 mb-14 block"
-          :font-size="5"
-          :the-word="['Hello!', 'I\'m Orhan']"
+          :font-size="4"
+          :the-word="['Helloo!', 'I\'m Orhan']"
         />
         <TheParagraphText fontSize="2rem" class="relative mb-16"
           >JavaScript Developer
@@ -18,9 +18,8 @@
     </header>
     <section class="relative">
       <div
-        class="after:absolute after:top-20 after:left-[20%] after:hidden after:font-semibold after:text-text-color after:opacity-[2%] after:content-['About\00a0Me'] after:md:block after:md:text-[6rem] after:lg:text-[10rem] after:xl:text-[12rem]"
-      ></div>
-      <div class="grid grid-cols-5">
+        class="grid grid-cols-5 after:absolute after:top-10 after:right-[5%] after:hidden after:font-semibold after:text-text-color after:opacity-[2%] after:content-['About\00a0Me'] after:md:block after:md:text-[6rem] after:lg:text-[10rem] after:xl:text-[12rem]"
+      >
         <div class="col-span-5 xl:col-span-3">
           <TheHeaderText
             class="mb-16 mt-0"
@@ -186,44 +185,49 @@
           </div>
         </div>
       </div>
+
       <TheHeaderText
         class="mt-24 mb-14 block"
-        header-type="h3"
+        header-type="h2"
         :the-word="['My Talks']"
       />
-      <div class="mt-[3rem] grid grid-cols-3 gap-3">
-        <div class="col-span-3 md:col-span-1">
-          <iframe
-            width="100%"
-            height="280"
-            src="https://www.youtube.com/embed/4mPC-I0ZNjY?start=3791"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="col-span-3 md:col-span-1">
-          <iframe
-            width="100%"
-            height="280"
-            src="https://www.youtube.com/embed/Ng_47FCnn04"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="col-span-3 md:col-span-1">
-          <iframe
-            width="100%"
-            height="280"
-            src="https://www.youtube.com/embed/CYdz2ybiJgg"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+      <div class="relative mt-[3rem]">
+        <div
+          class="grid grid-cols-3 gap-3 after:absolute after:-top-44 after:right-[5%] after:hidden after:font-semibold after:text-text-color after:opacity-[2%] after:content-['My\00a0Talks'] after:md:block after:md:text-[6rem] after:lg:text-[10rem] after:xl:text-[12rem]"
+        >
+          <div class="col-span-3 md:col-span-1">
+            <iframe
+              width="100%"
+              height="280"
+              src="https://www.youtube.com/embed/4mPC-I0ZNjY?start=3791"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <iframe
+              width="100%"
+              height="280"
+              src="https://www.youtube.com/embed/Ng_47FCnn04"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <div class="col-span-3 md:col-span-1">
+            <iframe
+              width="100%"
+              height="280"
+              src="https://www.youtube.com/embed/CYdz2ybiJgg"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </section>
