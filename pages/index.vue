@@ -1,8 +1,12 @@
 <template>
   <main class="relative ml-6">
     <header class="mb-[8rem] grid grid-cols-5 gap-3">
-      <div class="col-span-3">
-        <TheHeaderText class="mt-24 mb-14 block" :the-word="helloWord" />
+      <div class="col-span-5 md:col-span-3">
+        <TheHeaderText
+          class="mt-24 mb-14 block"
+          :font-size="5"
+          :the-word="['Hello!', 'I\'m Orhan']"
+        />
         <TheParagraphText fontSize="2rem" class="relative mb-16"
           >JavaScript Developer
         </TheParagraphText>
@@ -182,13 +186,51 @@
           </div>
         </div>
       </div>
+      <TheHeaderText
+        class="mt-24 mb-14 block"
+        header-type="h3"
+        :the-word="['My Talks']"
+      />
+      <div class="mt-[3rem] grid grid-cols-3 gap-3">
+        <div class="col-span-3 md:col-span-1">
+          <iframe
+            width="100%"
+            height="280"
+            src="https://www.youtube.com/embed/4mPC-I0ZNjY?start=3791"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="col-span-3 md:col-span-1">
+          <iframe
+            width="100%"
+            height="280"
+            src="https://www.youtube.com/embed/Ng_47FCnn04"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div class="col-span-3 md:col-span-1">
+          <iframe
+            width="100%"
+            height="280"
+            src="https://www.youtube.com/embed/CYdz2ybiJgg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </section>
   </main>
 </template>
 
-<script setup lang="ts">
-const helloWord = ["Hello!", "I'm Orhan"];
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 img.pp {
