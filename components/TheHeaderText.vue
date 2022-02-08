@@ -25,27 +25,15 @@ import { useStore } from "~~/store/store";
 
 /* ---------------------------------- Props --------------------------------- */
 
-interface fontSize {
-  default?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
-}
-
 interface Props {
-  fontSize?: fontSize;
+  fontSize?: number;
   fontSizeUnit?: string;
   headerType?: string;
   theWord?: string[];
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  fontSize: (): Props["fontSize"] => ({
-    default: 4,
-    md: 5,
-    lg: 6,
-    xl: 7,
-  }),
+  fontSize: 3,
   fontSizeUnit: "rem",
   headerType: "h1",
   theWord: () => ["Default", "Text"],
@@ -68,19 +56,19 @@ onMounted(() => {
 /* --------------------------------- Getters -------------------------------- */
 
 const fontSize = computed({
-  get: () => `${props.fontSize.default}${props.fontSizeUnit}`,
+  get: () => `${props.fontSize}${props.fontSizeUnit}`,
   set: () => {},
 });
 const mdFontSize = computed({
-  get: () => `${props.fontSize.md}${props.fontSizeUnit}`,
+  get: () => `${props.fontSize * 1.33}${props.fontSizeUnit}`,
   set: () => {},
 });
 const lgFontSize = computed({
-  get: () => `${props.fontSize.lg}${props.fontSizeUnit}`,
+  get: () => `${props.fontSize * 1.45}${props.fontSizeUnit}`,
   set: () => {},
 });
 const xlFontSize = computed({
-  get: () => `${props.fontSize.xl}${props.fontSizeUnit}`,
+  get: () => `${props.fontSize * 1.65}${props.fontSizeUnit}`,
   set: () => {},
 });
 
@@ -134,6 +122,13 @@ function listenHoverOnLetters(headerWordContainer: HTMLElement) {
 @media screen and (max-width: 768px) {
   .header span {
     font-size: v-bind(mdFontSize);
+  }
+  .header::before {
+    top: -1.1rem;
+  }
+
+  .header::after {
+    bottom: -1.7rem;
   }
 }
 
