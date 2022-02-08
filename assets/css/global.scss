@@ -11,6 +11,20 @@ body,
   @apply bg-zinc-900 text-slate-400;
 }
 
+body::-webkit-scrollbar {
+  width: 10px; /* width of the entire scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-zinc-900;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-zinc-900; /* color of the scroll thumb */
+  @apply border-2 border-solid border-zinc-700;
+  border-radius: 50px; /* roundness of the scroll thumb */
+}
+
 /* ----------------------------- Behavior Rules ----------------------------- */
 
 ::selection {
