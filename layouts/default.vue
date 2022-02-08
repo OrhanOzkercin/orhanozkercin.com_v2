@@ -9,6 +9,7 @@
         ><br />
         &lt;/html&gt;
       </span>
+      <TheMusicButton />
     </Body>
   </Html>
 </template>
@@ -18,6 +19,10 @@ import TheNavBar from "../components/TheNavBar.vue";
 
 import { useStore } from "~~/store/store";
 const { tagColor, tagFontSize } = useStore();
+const renderMusicBtn = ref(false);
+onMounted(() => {
+  renderMusicBtn.value = true;
+});
 </script>
 
 <style>
