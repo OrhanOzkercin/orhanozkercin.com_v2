@@ -1,5 +1,13 @@
 <template>
   <Html lang="en" class="h-full" name="1">
+    <Head>
+      <Link
+        rel="stylesheet"
+        type="text/css"
+        href="https://widgets.superpeer.com/widget.css"
+      />
+      <Script src="https://widgets.superpeer.com/widget.js"></Script>
+    </Head>
     <Body class="container mx-auto min-h-screen font-sans">
       <TheNavBar />
 
@@ -22,7 +30,21 @@ const { tagColor, tagFontSize } = useStore();
 const renderMusicBtn = ref(false);
 onMounted(() => {
   renderMusicBtn.value = true;
+  addSuperpeerWidget();
 });
+
+const addSuperpeerWidget = () => {
+  window.addEventListener("load", () => {
+    new Superpeer.Widget({
+      embed: { type: "slide-in" },
+      launcher: {
+        type: "superpeer-logo",
+        options: {},
+      },
+      config: { username: "orhanozkercin", serviceSlug: "" },
+    });
+  });
+};
 </script>
 
 <style>
